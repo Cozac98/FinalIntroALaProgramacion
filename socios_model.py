@@ -43,8 +43,8 @@ def modificacion_socio(socio):
         cursor =  conexion.cursor()
         query = 'UPDATE socios SET nombres_socio = %s, apellidos_socio = %s, \
             dni_socio = %s, cant_grupo_familiar = %s,\
-            cant_menores18 = %s, cuota=%s WHERE id_socio = %s;' 
-        values = (socio[1], socio[2], socio[3], socio[4], socio[5], socio[6], socio[0])
+            cant_menores18 = %s, cuota = %s, menores_18 = %s WHERE id_socio = %s;'  #agregamos la columna menores_18
+        values = (socio[1], socio[2], socio[3], socio[4], socio[5], socio[6], socio[7], socio[0]) #aca se le agrega el value correspondiente
         cursor.execute(query, values)
         conexion.commit()
         return True
@@ -73,7 +73,7 @@ def alta_socio(socio):
         conexion = abrir_conexion()
         cursor =  conexion.cursor()
         query = 'INSERT INTO socios(nombres_socio, apellidos_socio, dni_socio,\
-             cant_grupo_familiar, cant_menores18, cuota) VALUES (%s, %s, %s, %s, %s, %s);' 
+             cant_grupo_familiar, cant_menores18, cuota, menores_18) VALUES (%s, %s, %s, %s, %s, %s, %s);' #y por ultimo se agrega al insert el menores_18 con su respectivo value
         cursor.execute(query, socio[1:])
         conexion.commit()
         query = 'SELECT * FROM socios WHERE id_socio = \
