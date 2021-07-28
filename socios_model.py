@@ -6,8 +6,8 @@ def abrir_conexion():
     try:
         conexion = pymysql.connect(host='localhost',
                                     user='root',
-                                    password='Flatron98',
-                                    db='abmsocios')
+                                    password='',
+                                    db='abm_socios')
         print("La conexión a la base de datos fue correcta")
         return conexion 
     except (Exception, Error) as error_capturado: 
