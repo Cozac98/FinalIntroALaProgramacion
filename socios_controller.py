@@ -69,3 +69,4 @@ class Socio:
         else:                           #de lo contrario pone la palabra menores
             cadena_modificable += 'menores de 18 años.'
             return cadena_modificable
+             
