@@ -6,7 +6,7 @@ def abrir_conexion():
     try:
         conexion = pymysql.connect(host='localhost',
                                     user='root',
-                                    password='',
+                                    password='Flatron98',
                                     db='abmsocios')
         print("La conexión a la base de datos fue correcta")
         return conexion 
